@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="guest()">Bắt đầu</button>
+<script>
+
+    function guest() {
+        let x = parseInt(prompt('Input smaller number'))
+        let y = parseInt(prompt("Input bigger number"))
+        let rd = Math.floor(Math.random() * (y - x) + x)
+        let choose = parseInt(prompt('Input chosen number'))
+        count = 0
+        while (count < 2){
+            if (choose < rd){
+                choose = parseInt(prompt('Số của bạn nhỏ hơn, hãy nhập lại'))
+            }else if(choose > rd) {
+                choose = parseInt(prompt('Số của bạn lớn hơn, hãy nhập lại'))
+            }else if (choose === rd){
+                choose = parseInt(prompt('Chính xác'))
+                document.write('Bạn đã đoán đúng, re-load lại trang để tiếp tục chơi')
+                break;
+            }else{
+                choose = parseInt(prompt('Hãy nhập số bạn đoán'))
+            }count++
+        }
+
+    }
+</script>
+</body>
+</html>
